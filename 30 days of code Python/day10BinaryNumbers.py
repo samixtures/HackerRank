@@ -12,7 +12,6 @@ if __name__ == '__main__':
     n = int(input().strip())
     
     list = []
-        #convert decimal to binary using recursion?
     while n > 0:
         remainder = n%2
         list.append(remainder)
@@ -24,8 +23,8 @@ if __name__ == '__main__':
         if x == 1:
             counter+=1
         elif x == 0:
-            if counter > max_counter:
-                max_counter = counter
             counter = 0
+        if counter > max_counter:
+                max_counter = counter
     print(max_counter)
         
