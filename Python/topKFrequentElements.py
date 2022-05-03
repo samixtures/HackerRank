@@ -12,26 +12,23 @@ def topKFrequent(nums, k):
         else:
             hashMap[x] = 1 # 1
             
-    max = 0
+    maxVal = 0
+    maxKey = 0
     maxList = []
     # 1:3, 2:2, 3:1
-    # 3:1, 0:2, 1:1
     # loop through and get the max and add it to the list
     while k > 0:
         for x in hashMap:
             if x in maxList:
                 continue
-            print("hashMap[x]:", hashMap[x], "\n")
-            print(type(x))
-            if hashMap[x] > max:
-                max = x          
-            # print("x:", x)
-            # print("hashMap[x]:", hashMap[x], "\n")
-        maxList.append(max)
+            if maxVal < hashMap[x]:
+                maxVal = hashMap[x]
+                maxKey = x
+        maxList.append(maxKey)
         k -= 1
-        max = 0
+        maxVal = 0
     return maxList
-testList = [1,1,1,2,2,3]
+testList = [1,1,2,2,2,3]
 testK = 2
 answerList = topKFrequent(testList, testK)
 print("answer:", answerList)
