@@ -1,0 +1,45 @@
+# This question is asked by Google. 
+# Given a string, return whether or not it uses capitalization correctly. 
+# A string correctly uses capitalization if all letters are capitalized, no letters are capitalized, 
+# or only the first letter is capitalized.
+
+# Ex: Given the following strings...
+
+# "USA", return true
+# "Calvin", return true
+# "compUter", return false
+# "coding", return true
+
+#Hmm.. first of all we need to figure out how to check if a character is capitalized or not
+#We can create a hashmap with all capital letter values and check if a value is in them,
+#Memory: Creating the hashMap will be O(1) memory since it will only take 27 letters
+#Time: We loop through the string and check if their values are in the hashmap. Looping through is 
+#O(N) time and checking if it's in the hashMap should take O(1) time so should be O(N) time and O(N) memory
+#ACTUALLY we use hashset here not hashmap
+
+
+# Might be easier to figure out if it's falseeeeee
+
+
+#VARIABLE
+def func():
+    m = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'}
+
+    test = "USA"
+    # if test[0] in m:
+    #     for x in (1, len(test)-1):
+    #         if test[x] not in m:
+    #             return False
+    #     return True
+    length = len(test)
+    counter = 0
+    for x in test:
+        if x in m:
+            counter +=1
+    print("Counter is", counter)
+    if length == counter:
+        return True
+    else:
+        return False
+
+print(func())
