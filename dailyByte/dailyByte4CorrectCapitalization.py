@@ -22,24 +22,59 @@
 
 
 #VARIABLE
-def func():
+def func(test):
     m = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'}
 
-    test = "USA"
     # if test[0] in m:
     #     for x in (1, len(test)-1):
     #         if test[x] not in m:
     #             return False
     #     return True
-    length = len(test)
-    counter = 0
-    for x in test:
-        if x in m:
-            counter +=1
-    print("Counter is", counter)
-    if length == counter:
-        return True
-    else:
-        return False
+    
+    # length = len(test)
+    # counter = 0
+    # for x in test:
+    #     if x in m:
+    #         counter +=1
+    # print("Counter is", counter)
+    # if length == counter:
+    #     return True
+    # else:
+    #     return False
 
-print(func())
+    #It's false if the first letter is lowercase and
+    #there's an uppercase letter somewhere
+    #heLlo
+    counter = 0
+    leng = len(test)
+    if test[0] not in m:
+        for x in test:
+            if x in m:
+                return False
+
+    #It's false if all letters are capitalized except 1
+    #Check if there are 
+    #UsA
+    elif test[0] in m:
+        for x in test:
+            if x in m:
+                counter+=1
+        if counter > 1 and counter != leng:
+            return False
+        else:
+            return True
+    else:
+        return True
+
+    
+
+test = "USA" #true
+test1 = "hIya" #false
+test2 = "Calvin" #true
+test3 = "compUter" #false
+test4 = "coding" #true
+# "USA", return true
+# "Calvin", return true
+# "compUter", return false
+# "coding", return true
+print(func(test4))
