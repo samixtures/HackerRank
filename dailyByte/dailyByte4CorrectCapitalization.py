@@ -55,16 +55,15 @@ def func(test):
     #It's false if all letters are capitalized except 1
     #Check if there are 
     #UsA
-    elif test[0] in m:
+    if test[0] in m:
         for x in test:
             if x in m:
                 counter+=1
         if counter > 1 and counter != leng:
             return False
-        else:
-            return True
-    else:
-        return True
+
+
+    return True
 
     
 
@@ -73,8 +72,4 @@ test1 = "hIya" #false
 test2 = "Calvin" #true
 test3 = "compUter" #false
 test4 = "coding" #true
-# "USA", return true
-# "Calvin", return true
-# "compUter", return false
-# "coding", return true
 print(func(test4))
