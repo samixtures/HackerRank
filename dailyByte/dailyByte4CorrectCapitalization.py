@@ -24,24 +24,6 @@
 #VARIABLE
 def func(test):
     m = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'}
-
-    # if test[0] in m:
-    #     for x in (1, len(test)-1):
-    #         if test[x] not in m:
-    #             return False
-    #     return True
-    
-    # length = len(test)
-    # counter = 0
-    # for x in test:
-    #     if x in m:
-    #         counter +=1
-    # print("Counter is", counter)
-    # if length == counter:
-    #     return True
-    # else:
-    #     return False
-
     #It's false if the first letter is lowercase and
     #there's an uppercase letter somewhere
     #heLlo
@@ -52,9 +34,9 @@ def func(test):
             if x in m:
                 return False
 
-    #It's false if all letters are capitalized except 1
-    #Check if there are 
-    #UsA
+    #It's false if first letter is upercase and
+    # all other letters are capitalized except 1
+    #SAmI or UsA or WASSuP
     if test[0] in m:
         for x in test:
             if x in m:
@@ -62,7 +44,7 @@ def func(test):
         if counter > 1 and counter != leng:
             return False
 
-
+    #Otherwise it's True... right?
     return True
 
     
