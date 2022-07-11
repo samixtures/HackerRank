@@ -27,6 +27,15 @@ _____
 # 100 + 1 
 
 # should we just convert do decimal, add it, then convert back to binary?
-# or what we do it something like %10, add that with the added value, and if it's
+# or we could do something like %10, add that with the added value, and if it's
 # greater than 1 then we make the new string's first binary value 0, and continue 
 # or something like that 
+
+#  100
+# +  1
+# ______
+
+
+# 100 % 10 = 0
+# 1 % 10 = 1
+# 0 + 1 = 1
