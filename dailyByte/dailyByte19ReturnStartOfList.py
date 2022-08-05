@@ -25,7 +25,7 @@ l2 = ListNode(1, ListNode(9, ListNode(3, ListNode(7))))
 l1_ref = l1
 l1_ref_ref = l1_ref
 while l1_ref.next:
-    print(l1_ref.val)
+    # print(l1_ref.val)
     l1_ref = l1_ref.next
 l1_ref.next = l1.next
 
@@ -33,6 +33,25 @@ l1_ref.next = l1.next
 l2_ref = l2
 l2_ref_ref = l2_ref
 while l2_ref.next:
-    print(l2_ref.val)
+    # print(l2_ref.val)
     l2_ref = l2_ref.next
-l2_ref.next = l2.next
+l2_ref.next = l2.next.next.next
+
+
+
+def return_start_of_list(l):
+    hash = set()
+    h = l
+    while h:
+        if h.val not in hash:
+            hash.add(h.val)
+        else:
+            return h
+        h = h.next
+    return None
+answer = return_start_of_list(l)
+print(answer)
+answer = return_start_of_list(l1_ref_ref)
+print(answer.val)
+answer = return_start_of_list(l2_ref_ref)
+print(answer.val)
