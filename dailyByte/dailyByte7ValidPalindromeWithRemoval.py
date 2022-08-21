@@ -27,6 +27,8 @@ rev = test[::-1]
 # print("Temp is:", temp)
 # print("revTemp is:", revTemp)
 
+
+
 def vpwr(test):
     i = 0
     for x in test:

@@ -13,6 +13,7 @@
 
 #Let's create a frequency map 
 
+
 j= "Af"
 s = "AaaddfFf"
 j1 = "abc"

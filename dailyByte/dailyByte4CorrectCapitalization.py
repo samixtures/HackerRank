@@ -37,6 +37,7 @@ def func(test):
     #It's false if first letter is upercase and
     # all other letters are capitalized except 1
     #SAmI or UsA or WASSuP
+    #
     if test[0] in m:
         for x in test:
             if x in m:
