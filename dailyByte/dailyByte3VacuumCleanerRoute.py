@@ -8,7 +8,7 @@
 # "LR", return true
 # "URURD", return false
 # "RUULLDRD", return true
-
+#
 #HMM check if Rs and Ls are the same, and if Us and Ds are the same
 test = "LR"
 test2 = "URURD"
