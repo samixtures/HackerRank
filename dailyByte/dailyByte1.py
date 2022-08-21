@@ -11,7 +11,6 @@
 # “The Daily Byte”, return "etyB yliaD ehT”
 # “civic”, return “civic”
 
-
 str = "The Daily Byte"
 
 def reverseStr(str):
