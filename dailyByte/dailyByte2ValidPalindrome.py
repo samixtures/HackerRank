@@ -7,6 +7,7 @@
 # "algorithm", return false
 # "A man, a plan, a canal: Panama.", return true
 
+
 test = "levels"
 reverse = ""
 # create a variable that reads the test case from end to start
