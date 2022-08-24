@@ -30,13 +30,21 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
-def trav(t):
-    h = t
+def trav(h):
     if not h:
         return
     print(h.val)
     trav(h.left)
     trav(h.right)
 t = TreeNode(7, TreeNode(2, TreeNode(1), TreeNode(5)), TreeNode(9))
-
+a, b = 1, 9
 trav(t)
+
+def lowest_common_ancestor(t, a, b):
+    h1 = h2 = {}
+    c1 = c2 = 0
+    trav(t)
+    if not t:
+        return t
+    while t.val != a:
+        trav(t.left)
