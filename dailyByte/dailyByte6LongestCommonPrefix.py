@@ -7,42 +7,29 @@
 # ["colorado", "color", "cold"], return "col"
 # ["a", "b", "c"], return ""
 # ["spot", "spotty", "spotted"], return "spot"
-test =  ["colorado", "color", "cold"] #return col
-print(len(test[0])-1)
-i = 1
-f = test[0]
-same = True
-pref = ""
-while i < len(test):
-    j = 0
-    k = 0
+
+s = ["colorado", "color", "cold"]
+s1 = ["a", "b", "c"]
+s2 = ["spot", "spotty", "spotted"]
+
+def LCP(s):
+    l = []
+    i = 0
     same = True
-    while same:
-        # if j >= len(test[i]) or j >= len(test[i-1]):
-        #     break
-        if test[i][j] == test[i-1][j] and j < len(test[i])-1:
-            print(test[i][j])
-            # print(j)
-            pref += test[i][j]
-            j+=1
-        else:
-            same = False
-    i+=1
-print(pref)
-# def lcp(str):
-
-# res = ""
-# charIn = True
-# first = str[1]
-# if str1
-# for x in str:
-#     if x == first:
-#         continue
-#     for y in x:
-#         if y == 
-
-# for x in str:
-#     if x == first:
-#         continue
-#     for y in range(len(str[x])-1):
-#         if 
+    first = s[0]
+    #        01234567
+    second = s[1]
+    #         01234
+    third = s[2]
+    result = []
+    while i < min(len(first), len(second)) and first[i] == second[i]:
+        # print(first[i])
+        l.append(first[i])
+        i = i + 1
+    i = 0
+    while i < min(len(l), len(third)) and l[i] == third[i]:
+        result.append(third[i])
+        i = i + 1
+    return(''.join(result))
+print(LCP(s2))
+    
