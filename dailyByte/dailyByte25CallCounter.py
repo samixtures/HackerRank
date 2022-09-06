@@ -18,10 +18,13 @@ class CallCounter:
     def __init__(self):
         self.q = []
     def ping(self, t): #timestamp in miliseconds
-        if self.q:
-            while (3000 - self.q[-1]) <= 0:
-                self.q.pop(-1)
         self.q.append(t)
+        while t - self.q[0] >= 3000:
+            self.q.pop(0)
+        # if self.q:
+        #     while (3000 - self.q[-1]) <= 0:
+        #         self.q.pop(-1)
+        # self.q.append(t)
         return len(self.q)
 q = CallCounter()
 print(q.ping(1))
