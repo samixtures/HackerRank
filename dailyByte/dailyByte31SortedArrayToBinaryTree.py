@@ -19,3 +19,20 @@
 #      /   / \
 #     1   4   6
 
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val=val
+        self.left=left
+        self.right=right
+t = [1, 2, 3]
+t1 = [1, 2, 3, 4, 5, 6]
+
+def sorted_array_to_binary_tree(l:list):
+    mid = sum(l)//len(l)
+    res_tree = TreeNode(l[mid])
+    l.pop(mid)
+    q = [res_tree]
+
+    return l
+print(sorted_array_to_binary_tree(t))
