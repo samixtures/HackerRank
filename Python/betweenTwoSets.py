@@ -32,14 +32,24 @@ def getTotalX(a, b):
         return True
     
     res = []
-    considered_list = fact(b[0])
-    print("considered_list", considered_list)
-    for x in considered_list:
-        if all_list_values(a, fact(x)):
-            res.append(x)
+    for i in range(len(b)):
+        considered_list = fact(b[i])
+        for x in considered_list:
+            if all_list_values(a, fact(x)):
+                res.append(x)
     print("res is", res)
-    return len(res)
-    
+    h = {}
+    for x in res:
+        if x not in h:
+            h[x] = 1
+        else:
+            h[x] += 1
+    counter = 0
+    for x in h:
+        if h[x] == len(b):
+            counter += 1
+    return counter
+        
     
     #FORGET ALL THIS
     # set a variable = to the max of the first array
