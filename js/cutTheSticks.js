@@ -44,15 +44,25 @@ function cutTheSticks(arr) {
         return minimumVal
     }
     
-    result.push(arr.length)
-    
-    if (arr.length > 0) {
-        minimumVal = arr.pop(findMin(arr))
-        console.log("minimumVal is ", minimumVal)
-        
+    while (arr.length > 0) {
+        result.push(arr.length)
+        minimumVal = findMin(arr)
+        // arr.splice(arr.indexOf(minimumVal))
+        console.log("arr is ", arr)
         if (arr.length > 0) {
             for (let i = 0; i < arr.length; i++) {
-                arr[i] -= minimumVal
+                console.log("arr[i] is", arr[i])
+                arr[i] = arr[i] - minimumVal
+                if (arr[i] == 0) {
+                    arr.splice(i, 1)
+                    /*
+                    Adding the i-=1 turned out to be quite tricky.
+                    When we do splice it removes an element, and then that makes
+                    the element after it move down, but i doesn't move down, it keeps
+                    going.
+                    */
+                    i -= 1
+                }
             }
         }
     }
