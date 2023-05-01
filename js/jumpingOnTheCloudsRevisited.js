@@ -26,18 +26,44 @@ function readLine() {
 
 // Complete the jumpingOnClouds function below.
 function jumpingOnClouds(c, k) {
-    let e = 100;
-    let curr = 0;
-    let thunderCount = 0;
-    while (curr < c.length-1) {
-        curr += k;
-        e -= 1;
-        if (c[curr] == 1) {
-            thunderCount += 1;
-        }
+    /*
+    i = 0
+    k = 2
+    n = 4
+    2/4 = 0 remainder 2
+    all numbers less than the size are the same remainder number, oh okay so this is just to
+    make it so that if they jump past the size of the array it wraps back aground
+    */
+    
+    // given array c and jump size k
+    //each jump costs 1 unit of energy, and if we land on a thunderhead, we lose 2 additional units
+    // the game ends when we get back to point 0
+    
+    
+    let thunderHeadCounter = 0
+    let energyDecrease = 0
+    let i = 0
+    
+    // if (c[0] == 1) {
+    //     thunderHeadCounter += 1
+    // }
+    
+    i += k
+    energyDecrease += 1
+    if (c[i%c.length] == 1){
+        console.log("c[i] and i are", [c[i], i])
+        thunderHeadCounter += 1
     }
-    e -= (thunderCount*2);
-    return e;
+    while(i%c.length != 0) {
+        i += k
+        if (c[i%c.length] == 1) {
+            console.log("c[i] and i are ", [c[i%c.length], i])
+            thunderHeadCounter += 1
+        }
+        energyDecrease += 1
+    }
+    console.log("thunderHeadCounter is", thunderHeadCounter)
+    return 100-energyDecrease-(2*thunderHeadCounter)
 
 }
 
