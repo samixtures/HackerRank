@@ -20,9 +20,9 @@ def dominoes(s):
     ret = []
     for x in s:
         if x > 0:
-            positive += x
+            positive = x
         elif x < 0:
-            negative -= x
+            negative += x
         if positive > 0 and negative < 0:
             if (positive + negative) > 0:
                 ret.append(positive)
